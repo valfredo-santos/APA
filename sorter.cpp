@@ -21,9 +21,7 @@ void Sorter::selectionSort(int input[], int inputSize){
         min = j;
     }
     if(min != i){
-      int aux = input[i];
-      input[i] = input[min];
-      input[min] = aux;
+      std::swap(input[i], input[min]);
     }
   }
 }
