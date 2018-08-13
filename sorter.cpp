@@ -11,9 +11,6 @@ void Sorter::printList(int input[], int inputSize){
 }
 
 void Sorter::selectionSort(int input[], int inputSize){
-  std::cout << "\nLista Original: ";
-  printList(input, inputSize);
-
   for(int i = 0; i < inputSize - 1; i++){
     int min = i;
     for(int j = i + 1; j < inputSize; j++){
@@ -26,15 +23,9 @@ void Sorter::selectionSort(int input[], int inputSize){
       input[min] = aux;
     }
   }
-
-  std::cout << "\nLista Ordenada: ";
-  printList(input, inputSize);
 }
 
 void Sorter::insertionSort(int input[], int inputSize){
-  std::cout << "\nLista Original: ";
-  printList(input, inputSize);
-
   int aux, j;
   for(int i = 1; i < inputSize; i++){
     aux = input[i];
@@ -45,23 +36,39 @@ void Sorter::insertionSort(int input[], int inputSize){
     }
     input[j+1] = aux;
   }
-
-  std::cout << "\nLista Ordenada: ";
-  printList(input, inputSize);
 }
 
-void Sorter::mergeSort(int input[], int inputSize){
-  std::cout << "\nLista Original: ";
-  printList(input, inputSize);
+void merge(int input[], int start, int mid, int end){
+  int a = start;
+  int b = mid + 1;
+  int k = 0;
+  int aux[end - start + 1];
 
-  std::cout << "\nLista Ordenada: ";
-  printList(input, inputSize);
+  for(int i = start; i <= end; i++){
+    if(a > mid)
+      aux[k++] = input[b++];
+    else if(b > end)
+      aux[k++] = input[a++];
+    else if(input[a] < input[b])
+      aux[k++] = input[a++];
+    else
+      aux[k++] = input[b++];
+  }
+
+  for(int j = 0; j < k; j++){
+    input[start++] = aux[j];
+  }
+}
+
+void Sorter::mergeSort(int input[], int start, int end){
+  if (start < end){
+    int mid = (start + end)/2;
+    mergeSort(input, start, mid);
+    mergeSort(input, mid+1, end);
+    merge(input, start, mid, end);
+  }
 }
 
 void Sorter::quickSort(int input[], int inputSize){
-  std::cout << "\nLista Original: ";
-  printList(input, inputSize);
 
-  std::cout << "\nLista Ordenada: ";
-  printList(input, inputSize);
 }

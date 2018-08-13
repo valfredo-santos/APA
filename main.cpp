@@ -43,6 +43,19 @@ int main(){
 
   }
 
+  std::cout << "\nLista Original: ";
+  switch (inputOption) {
+    case 1:
+      sorter.printList(input1, 5);
+      break;
+    case 2:
+      sorter.printList(input2, 5);
+      break;
+    case 3:
+      sorter.printList(input3, 20);
+      break;
+  }
+
   switch(sortingAlgorithm){
     case 1:
       if(inputOption == 1)
@@ -62,11 +75,11 @@ int main(){
       break;
     case 3:
       if(inputOption == 1)
-        sorter.mergeSort(input1, 5);
+        sorter.mergeSort(input1, 0, 4);
       else if(inputOption == 2)
-        sorter.mergeSort(input2, 5);
+        sorter.mergeSort(input2, 0, 4);
       else
-        sorter.mergeSort(input3, 20);
+        sorter.mergeSort(input3, 0, 19);
       break;
     case 4:
       if(inputOption == 1)
@@ -77,6 +90,19 @@ int main(){
         sorter.quickSort(input3, 20);
       break;
     default:
+      break;
+  }
+
+  std::cout << "\nLista Ordenada: ";
+  switch (inputOption) {
+    case 1:
+      sorter.printList(input1, 5);
+      break;
+    case 2:
+      sorter.printList(input2, 5);
+      break;
+    case 3:
+      sorter.printList(input3, 20);
       break;
   }
 
