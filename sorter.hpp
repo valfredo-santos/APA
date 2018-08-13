@@ -1,8 +1,8 @@
 #ifndef SORTER_HPP
 #define SORTER_HPP
 
-#include <iostream>
-#include <math.h>
+#include <iostream> //std::cout std::cin
+#include <utility> //std::swap()
 
 class Sorter{
 
@@ -15,7 +15,7 @@ class Sorter{
     void selectionSort(int input[], int inputSize);
     void insertionSort(int input[], int inputSize);
     void mergeSort(int input[], int start, int end);
-    void quickSort(int input[], int inputSize);
+    void quickSort(int input[], int start, int end);
 
 };
 

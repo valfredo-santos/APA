@@ -3,8 +3,8 @@
 
 #include "sorter.hpp"
 
-int sortingAlgorithm = 0;
-int inputOption = 0;
+int sortingAlgorithm = 0; //Algoritmo de Ordenação Escolhido
+int inputOption = 0; //Exemplo escolhido
 
 //Exemplos
 int input1[5] = {0, 1, 2, 3, 4};
@@ -15,6 +15,7 @@ Sorter sorter;
 
 int main(){
 
+  //Solicita o algoritmo de ordenação que será utilizado
   while(true){
     std::cout << "\nEscolha o algoritmo de ordenacao desejado\n(1)Selection Sort\n(2)Insertion Sort\n(3)Merge Sort\n(4)Quick Sort\n>: ";
     std::cin >> sortingAlgorithm;
@@ -25,6 +26,7 @@ int main(){
     std::cout << "Opcao invalida, tente novamente!\n";
   }
 
+  //Solicita a lista de entrada que será utilizada
   while(true){
     std::cout << "\nEscolha uma das listas de entrada";
     std::cout << "\n(1) Lista: ";
@@ -43,6 +45,7 @@ int main(){
 
   }
 
+  //Imprime a lista antes da ordenação
   std::cout << "\nLista Original: ";
   switch (inputOption) {
     case 1:
@@ -56,6 +59,8 @@ int main(){
       break;
   }
 
+  /*Realiza a ordenação levando em consideração a lista de entrada e o algoritmo
+    escolhidos pelo usuario.*/
   switch(sortingAlgorithm){
     case 1:
       if(inputOption == 1)
@@ -83,16 +88,17 @@ int main(){
       break;
     case 4:
       if(inputOption == 1)
-        sorter.quickSort(input1, 5);
+        sorter.quickSort(input1, 0, 4);
       else if(inputOption == 2)
-        sorter.quickSort(input2, 5);
+        sorter.quickSort(input2, 0, 4);
       else
-        sorter.quickSort(input3, 20);
+        sorter.quickSort(input3, 0, 19);
       break;
     default:
       break;
   }
 
+  //Imprime a lista após a ordenação
   std::cout << "\nLista Ordenada: ";
   switch (inputOption) {
     case 1:

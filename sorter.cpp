@@ -3,6 +3,7 @@
 Sorter::Sorter(){;}
 Sorter::~Sorter(){;}
 
+//Imprime a lista
 void Sorter::printList(int input[], int inputSize){
   std::cout << "{ ";
   for(int i = 0; i < inputSize; i++)
@@ -10,6 +11,8 @@ void Sorter::printList(int input[], int inputSize){
   std::cout << "}";
 }
 
+/*Selection Sort
+  Complexidade - Melhor: n*n Média: n*n Pior: n*n */
 void Sorter::selectionSort(int input[], int inputSize){
   for(int i = 0; i < inputSize - 1; i++){
     int min = i;
@@ -25,6 +28,8 @@ void Sorter::selectionSort(int input[], int inputSize){
   }
 }
 
+/*Insertion Sort
+  Complexidade - Melhor: n Média: n*n Pior: n*n */
 void Sorter::insertionSort(int input[], int inputSize){
   int aux, j;
   for(int i = 1; i < inputSize; i++){
@@ -60,6 +65,8 @@ void merge(int input[], int start, int mid, int end){
   }
 }
 
+/*Merge Sort
+  Complexidade - Melhor: n*Log(n) Média: n*Log(n) Pior: n*Log(n) */
 void Sorter::mergeSort(int input[], int start, int end){
   if (start < end){
     int mid = (start + end)/2;
@@ -69,6 +76,27 @@ void Sorter::mergeSort(int input[], int start, int end){
   }
 }
 
-void Sorter::quickSort(int input[], int inputSize){
+int partition(int input[], int start, int end){
+  int i = start + 1;
+  int pivo = input[start];
 
+  for(int j = start + 1; j <= end; j++){
+    if(input[j] < pivo){
+      std::swap(input[i], input[j]);
+      i++;
+    }
+  }
+
+  std::swap(input[start], input[i-1]);
+  return i-1;
+}
+
+/*Quick Sort
+  Complexidade - Melhor: n*Log(n) Média: n*Log(n) Pior: n*n */
+void Sorter::quickSort(int input[], int start, int end){
+  if (start < end){
+    int pivo = partition(input, start, end);
+    quickSort(input, start, pivo - 1);
+    quickSort(input, pivo + 1, end);
+  }
 }
