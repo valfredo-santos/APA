@@ -75,18 +75,18 @@ void Sorter::mergeSort(int input[], int start, int end){
 }
 
 int partition(int input[], int start, int end){
-  int i = start + 1;
-  int pivo = input[start];
+  int i = start - 1;
+  int pivo = input[end];
 
-  for(int j = start + 1; j <= end; j++){
-    if(input[j] < pivo){
-      std::swap(input[i], input[j]);
+  for(int j = start; j <= end - 1; j++){
+    if(input[j] <= pivo){
       i++;
+      std::swap(input[i], input[j]);
     }
   }
 
-  std::swap(input[start], input[i-1]);
-  return i-1;
+  std::swap(input[end], input[i+1]);
+  return i+1;
 }
 
 /*Quick Sort
