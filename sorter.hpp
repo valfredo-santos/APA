@@ -11,11 +11,12 @@ class Sorter{
     Sorter();
     ~Sorter();
 
-    void printList(int input[], int inputSize);
-    void selectionSort(int input[], int inputSize);
-    void insertionSort(int input[], int inputSize);
-    void mergeSort(int input[], int start, int end);
-    void quickSort(int input[], int start, int end);
+    void PrintList(int input[], int inputSize);
+    void SelectionSort(int input[], int inputSize);
+    void InsertionSort(int input[], int inputSize);
+    void MergeSort(int input[], int start, int end);
+    void QuickSort(int input[], int start, int end);
+    void HeapSort(int input[], int inputSize);
 
 };
 
