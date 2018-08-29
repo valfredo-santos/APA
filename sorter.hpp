@@ -16,6 +16,7 @@ class Sorter{
     void InsertionSort(int input[], int inputSize);
     void MergeSort(int input[], int start, int end);
     void QuickSort(int input[], int start, int end);
+    void CountingSort(int input[], int inputSize, int k);
     void HeapSort(int input[], int inputSize);
 
 };

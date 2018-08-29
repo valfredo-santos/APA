@@ -3,6 +3,8 @@
 
 #include "sorter.hpp"
 
+#define RANGE 100 //Parâmetro K do CountingSort
+
 int sortingAlgorithm = 0; //Algoritmo de Ordenação Escolhido
 int inputOption = 0; //Exemplo escolhido
 
@@ -94,6 +96,14 @@ int main(){
         sorter.QuickSort(input2, 0, inputSize2 - 1);
       else
         sorter.QuickSort(input3, 0, inputSize3 - 1);
+      break;
+    case 5:
+      if(inputOption == 1)
+        sorter.CountingSort(input1, inputSize1, RANGE);
+      else if(inputOption == 2)
+        sorter.CountingSort(input2, inputSize2, RANGE);
+      else
+        sorter.CountingSort(input3, inputSize3, RANGE);
       break;
     case 6:
       if(inputOption == 1)

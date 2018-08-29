@@ -99,6 +99,41 @@ void Sorter::QuickSort(int input[], int start, int end){
   }
 }
 
+/*Counting Sort
+  Complexidade - Melhor: n + k ou n Média: n + k ou n Pior: n + k ou n */
+void Sorter::CountingSort(int input[], int inputSize, int k){
+  int output[inputSize];
+  int aux[k + 1];
+
+  //Inicializa array auxiliar com 0s
+  for (int i = 0; i <= k; i++){
+    aux[i] = 0;
+  }
+
+  //Incrementa no array auxliar o valor de indice igual ao valor da entrada
+  for (int i = 0; i < inputSize; i++){
+    aux[input[i]] = aux[input[i]] + 1;
+  }
+
+  /*Faz com que cada indice do array auxiliar seja uma soma do seu valor inicial
+    com o do anterior*/
+  for (int i = 1; i<= k; i++){
+    aux[i] = aux[i] + aux[i - 1];
+  }
+
+  /*Utiliza os valores do array auxiliar como indices para armazenar os valores
+    de entrada no novo array ordenado */
+  for (int i = 0; i < inputSize; i++){
+    output[aux[input[i]]- 1] = input[i];
+    aux[input[i]] = aux[input[i]] - 1;
+  }
+
+  //Copia os valores do array output para o input
+  for (int i = 0; i < inputSize; i++){
+    input[i] = output[i];
+  }
+}
+
 int Pai(int i){
   return (i - 1) / 2;
 }
