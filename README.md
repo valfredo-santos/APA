@@ -8,3 +8,5 @@ Implementações da disciplina Análise e Projeto de Algoritmos. UFPB -  Univers
 - Quick Sort
 - Counting Sort
 - Heap Sort
+
+# Kruskal
