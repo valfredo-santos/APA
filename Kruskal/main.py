@@ -1,19 +1,17 @@
 ''' Realiza a leitura do arquivo e retorna um dicionário com as arestas e seus pesos,
     uma lista da ordem crescente das arestas em relação ao peso e uma lista que informa 
     em qual árvore cada vértice se encontra inicialmente. '''
+
 def ReadFile(filename):
     with open(filename, 'r') as file:    
         aux = file.read().replace(' ', '\n').replace('\t', '\n')
         input = aux.split('\n')
-        
         input = [x for x in input if x != '']
                 
-        edges = {}
-        
+        edges = {}        
         n = input.pop(0)
         
         aux = 0;
-        
         for i in range(int(n)):
             for j in range (i+1, int(n)):
                 edges[str(i) + ',' + str(j)] = int(input[aux])
