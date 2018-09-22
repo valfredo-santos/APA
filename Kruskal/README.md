@@ -1,2 +1,2 @@
-#APA
-ImplementaÁ„o do algoritmo de Kruskal da disciplina An·lise e Projeto de Algoritmos. UFPB - Universidade Federal da ParaÌba.
+# APA
+Implementa√ß√£o do Algoritmo de Kruskal para a disciplina An√°lise e Projeto de Algoritmos. UFPB -  Universidade Federal da Para√≠ba.
