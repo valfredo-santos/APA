@@ -10,3 +10,5 @@ Implementações da disciplina Análise e Projeto de Algoritmos. UFPB -  Univers
 - Heap Sort
 
 # Kruskal
+# Prim
+# Dijkstra
