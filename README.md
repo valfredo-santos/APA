@@ -12,3 +12,4 @@ Implementações da disciplina Análise e Projeto de Algoritmos. UFPB -  Univers
 # Kruskal
 # Prim
 # Dijkstra
+# Mochila Inteira
